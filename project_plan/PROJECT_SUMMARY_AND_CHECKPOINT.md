@@ -103,12 +103,19 @@ SplitSafe forms **Tier 2** of the unified Audio Curation Suite:
 
 ---
 
-## 6. Current Milestones & Checkpoint Status
+## 6. Current Milestones & Release Roadmap (Option A)
 
-- [x] Project architecture, algorithms, and packaging configured (`pyproject.toml`, `src/splitsafe/`).
-- [x] Full unit test suite implemented (`tests/test_splits.py`) with 21/21 passing tests.
-- [x] WaveWash reference checkpoint documented and archived.
-- [x] Real-data benchmark validation on LibriSpeech (`dev-clean` vs `test-clean`): **0 false alarms, 100% planted leak detection (56/56)**. See [REAL_DATA_VALIDATION_REPORT.md](file:///Users/mymac/Desktop/Ai%202026%20Work/Antigravity%20Works/Splitsafe/project_plan/REAL_DATA_VALIDATION_REPORT.md).
-- [ ] **Next Step (Tomorrow):** PyPI Upload (`twine upload --repository testpypi dist/*` -> `twine upload dist/*`) and Git release tag (`v0.1.0a1`).
-- [ ] **Next Project:** SplitSafe Studio (Enterprise Web/Desktop UI with Wavesurfer.js leak playback, PDF compliance certificate, and Stripe billing).
-- [ ] Community & developer documentation expansion.
+- [x] **Core Engine & Architecture:** Partition-aware spectral fingerprinting and landmark voting (`pyproject.toml`, `src/splitsafe/`).
+- [x] **Automated Test Suite:** 21/21 passing unit tests in `tests/test_splits.py`.
+- [x] **Real-Data Benchmark Validation:** LibriSpeech `dev-clean` vs `test-clean` — 0 false alarms, 100% planted leak detection (56/56).
+- [x] **Task 5 Completed:** Interactive HTML listening report with side-by-side HTML5 audio players, synchronized playback, and `--html` CLI export.
+- [ ] **Task 4 (Tomorrow):** Initial PyPI Release (`v0.1.0a1`)
+  1. `twine upload --repository testpypi dist/*`
+  2. `twine upload dist/*`
+  3. `git tag v0.1.0a1 && git push --tags`
+  4. Test in fresh environment: `pip install --pre splitsafe`
+  5. Reserve PyPI package name for `segdupe`.
+- [ ] **Task 6 (`v0.2.0`):** Speaker Embeddings & Neural Voice Matching
+  - Label-free speaker contamination detection using lightweight ONNX speaker embedding models as an optional extra (`pip install "splitsafe[speaker]"`).
+- [ ] **Tier 3 (SegDupe):** Sub-clip alignment engine and enterprise audit studio.
+
