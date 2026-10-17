@@ -78,9 +78,9 @@ splitsafe check --manifest dataset.csv --out reports/ --json
 
 ---
 
-## 5. Global Talent Visa (GTV) Evidence & Strategic Positioning
+## 5. 3-Tier Audio Curation Suite Architecture & Strategic Positioning
 
-SplitSafe forms **Tier 2** of the unified Audio Curation Suite for international talent recognition:
+SplitSafe forms **Tier 2** of the unified Audio Curation Suite:
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -95,8 +95,8 @@ SplitSafe forms **Tier 2** of the unified Audio Curation Suite for international
 └────────────────────────────────────────────────────────┘
 ```
 
-* **GTV Criterion 1 (Innovation & Technical Depth):** Demonstrates applied digital signal processing algorithms solving core machine learning reproducibility and evaluation contamination problems.
-* **GTV Criterion 2 (Ecosystem Impact):** Complements WaveWash to create a professional-grade, multi-tool open-source portfolio published across PyPI, GitHub, and community forums.
+* **Signal Processing Integrity:** Demonstrates applied digital signal processing algorithms solving core machine learning reproducibility and evaluation contamination problems without heavy GPU overhead.
+* **Open-Source Ecosystem Impact:** Complements WaveWash to create a professional-grade, multi-tool audio engineering portfolio published across PyPI, GitHub, and Hugging Face.
 
 ---
 

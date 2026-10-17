@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-This project depends on third-party libraries (numpy, scipy, soundfile,
-librosa, pyloudnorm, scikit-learn, tqdm, langdetect, matplotlib, and
-optionally openai-whisper, torch/torchaudio). Each carries its own license
-(mostly BSD/MIT/Apache-2.0) -- check requirements.txt and each package's own
-license before redistributing, especially if your GTV program has its own
-licensing rules.

@@ -88,7 +88,7 @@ timeline
 
 ---
 
-## 6. Peer & Industry Recognition (GTV Evidence Record)
+## 6. Peer & Industry Recognition
 
 * **Public Engagement:** LinkedIn announcement post generated **213+ impressions** and direct peer commentary within hours.
 * **Expert Endorsement:** **Gerald Mwangi** (Audio DSP Engineer & Hiring Manager):
@@ -99,17 +99,17 @@ timeline
 
 ---
 
-## 7. Global Talent Visa (GTV) Evidence Mapping
+## 7. 3-Tier Audio Curation Suite Architecture
 
-WaveWash fulfills key requirements for the **Global Talent Visa (UK Tech Nation / US O-1 / Australia GTI)**:
+WaveWash serves as the foundational Tier 1 tool in the integrated suite:
 
-1. **Criterion 1 (Innovation / Significant Contribution Outside Employment):**
+1. **Independent Technical Innovation:**
    * Independently conceived, architected, and released a specialized audio data quality control engine on the Python Package Index.
    * Documented over 229 downloads and global mirror distributions on Day 1.
-2. **Criterion 2 (Recognition & Thought Leadership):**
+2. **Community & Professional Impact:**
    * Verifiable public technical debate and endorsement from industry audio engineers.
    * Comprehensive user manual and architecture documentation published under the author's name.
-3. **The 3-Tier Audio Curation Suite (The Bigger Picture):**
+3. **The 3-Tier Audio Curation Suite:**
    * **Tier 1 (File-Level):** `wavewash` — Audio QC, repair, and normalization.
    * **Tier 2 (Split-Level):** `splitsafe` — Train/Validation/Test data leakage and speaker contamination auditor.
    * **Tier 3 (Segment-Level):** `segdupe` — Sub-clip acoustic fingerprinting and landmark constellation sample matching.
