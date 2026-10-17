@@ -1,6 +1,7 @@
 # splitsafe
 
 [![tests](https://github.com/BoobalanArjunan/splitsafe/actions/workflows/tests.yml/badge.svg)](https://github.com/BoobalanArjunan/splitsafe/actions/workflows/tests.yml)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/boobalanit/splitsafe)
 ![status: alpha](https://img.shields.io/badge/status-alpha-orange)
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 
