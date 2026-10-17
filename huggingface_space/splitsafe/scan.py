@@ -36,6 +36,8 @@ class Match:
     kind: str          # "exact copy" | "same audio (re-encoded / trimmed / re-leveled)"
     votes: int
     coverage: float    # aligned matches / hashes in the smaller file (0..1)
+    abs_a: Path | None = None
+    abs_b: Path | None = None
 
 
 @dataclass
@@ -217,10 +219,11 @@ def check_splits(items: list[Item], min_votes: int = DEFAULT_MIN_VOTES, progress
                 if a.split != b.split:
                     key = tuple(sorted((a.path, b.path)))
                     seen.add(key)
+                    first_it, second_it = (a, b) if a.path == key[0] else (b, a)
                     res.matches.append(Match(key[0], key[1],
-                                             a.split if a.path == key[0] else b.split,
-                                             b.split if a.path == key[0] else a.split,
-                                             "exact copy", max(a.n_hashes, b.n_hashes), 1.0))
+                                             first_it.split, second_it.split,
+                                             "exact copy", max(a.n_hashes, b.n_hashes), 1.0,
+                                             first_it.abs, second_it.abs))
 
     # --- same audio, different bytes (re-encoded, resampled, trimmed, louder/quieter)
     if fps:
@@ -241,7 +244,8 @@ def check_splits(items: list[Item], min_votes: int = DEFAULT_MIN_VOTES, progress
             smaller = max(1, min(ia.n_hashes, ib.n_hashes))
             first, second = sorted((ia, ib), key=lambda z: z.path)
             res.matches.append(Match(first.path, second.path, first.split, second.split,
-                                     "same audio (re-encoded / trimmed / re-leveled)", v, round(min(1.0, v / smaller), 3)))
+                                     "same audio (re-encoded / trimmed / re-leveled)", v, round(min(1.0, v / smaller), 3),
+                                     first.abs, second.abs))
 
     # --- speakers present in more than one split
     spk: dict[str, dict[str, int]] = {}

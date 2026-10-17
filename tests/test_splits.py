@@ -189,9 +189,20 @@ def test_cli_exit_codes_and_reports(two, tmp_path, capsys):
     assert data["verdict"] == "FAIL" and len(data["cross_split_duplicates"]) == 1
     rows = list(csv.reader(open(out / "cross_split_duplicates.csv")))
     assert len(rows) == 2 and rows[0][0] == "file_a"
+    assert (out / "splitsafe_report.html").exists()
+    html_out = (out / "splitsafe_report.html").read_text()
+    assert "<audio" in html_out
+    assert "Play Both Aligned" in html_out
+
+    custom_html = tmp_path / "custom_report.html"
+    assert main(["check", str(tr), str(te), "--html", str(custom_html)]) == 1
+    assert custom_html.exists()
+    assert "<audio" in custom_html.read_text()
+
     capsys.readouterr()
     assert main(["check", str(tr), str(te), "--json"]) == 1
     assert json.loads(capsys.readouterr().out)["verdict"] == "FAIL"
+
 
 
 def test_cli_usage_errors(two, capsys):

@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 from . import __version__
-from .report import to_dict, to_text, write_reports
+from .report import to_dict, to_html, to_text, write_reports
 from .scan import (DEFAULT_MIN_VOTES, apply_speaker_regex, check_splits,
                    items_from_folders, items_from_manifest)
 
@@ -24,7 +24,8 @@ def main(argv=None) -> int:
     c.add_argument("--strict-speakers", action="store_true", help="treat shared speakers as FAIL, not WARN")
     c.add_argument("--min-votes", type=int, default=DEFAULT_MIN_VOTES,
                    help=f"aligned fingerprint matches needed to call two files the same audio (default {DEFAULT_MIN_VOTES})")
-    c.add_argument("--out", help="folder to write report files (json, csv, txt)")
+    c.add_argument("--out", help="folder to write report files (json, csv, txt, html)")
+    c.add_argument("--html", help="write interactive HTML listening report with audio players to this path")
     c.add_argument("--json", action="store_true", help="print JSON instead of text")
     a = ap.parse_args(argv)
     if a.cmd != "check":
@@ -59,6 +60,8 @@ def main(argv=None) -> int:
         return 2
     if a.out:
         write_reports(res, Path(a.out), a.strict_speakers)
+    if a.html:
+        to_html(res, Path(a.html), a.strict_speakers)
     if a.json:
         import json
         print(json.dumps(to_dict(res, a.strict_speakers), indent=2))

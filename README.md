@@ -61,8 +61,8 @@ Shared speakers give a **WARN** (for speech recognition this is often acceptable
 |---|---|
 | `--names a,b,c` | Split names (default: the folder names) |
 | `--manifest file.csv` | Use a CSV with `file,split[,speaker]` instead of folders. `--base DIR` sets what the file paths are relative to |
-| `--min-votes N` | How many fingerprint matches mean "same audio" (default 30) |
-| `--out DIR` | Write `splitsafe_report.json`, `cross_split_duplicates.csv` and `splitsafe_report.txt` |
+| `--out DIR` | Write `splitsafe_report.json`, `cross_split_duplicates.csv`, `splitsafe_report.txt`, and `splitsafe_report.html` |
+| `--html PATH` | Write interactive HTML listening report with side-by-side audio players |
 | `--json` | Print JSON instead of text |
 
 ## Use from Python
