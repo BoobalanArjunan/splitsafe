@@ -7,6 +7,9 @@
 
 **Check your audio train / validation / test folders for leakage before you train.**
 
+> **Core Architectural Finding:**  
+> SplitSafe brings established spectral landmark fingerprinting techniques into an integrated, partition-aware audio ML dataset auditing workflow—guaranteeing zero evaluation contamination and speaker boundary integrity before model training.
+
 If the same recording (or a re-encoded, resampled, louder, trimmed or clipped copy of it) sits on both sides of a split, your test score is measured on something the model has already seen, so it looks better than it really is. `splitsafe` finds those files, and also shows which speakers appear in more than one split.
 
 It is small, runs on your own computer, never changes your files, and uses classic signal processing (spectral-peak fingerprints). There is no neural network and no model download.

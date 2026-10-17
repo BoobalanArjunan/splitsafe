@@ -9,6 +9,9 @@
 
 ## 1. Executive Summary
 
+> **Core Architectural Finding:**  
+> **SplitSafe brings established spectral landmark fingerprinting techniques into an integrated, partition-aware audio ML dataset auditing workflow.**
+
 **SplitSafe** is an open-source, local-first Python library and CLI auditing tool engineered to detect **data leakage** and **speaker contamination** across machine learning dataset splits (`train/`, `val/`, `test/`). 
 
 In speech recognition (ASR/Whisper), text-to-speech (TTS/Voice Cloning), and speaker identification, models frequently appear to achieve state-of-the-art accuracy during training, only to severely degrade in production. The root cause is almost always **subtle dataset contamination**:

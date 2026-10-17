@@ -17,9 +17,10 @@ When data leakage occurs:
 
 Conventional deduplication techniques are fundamentally unsuited for audio datasets:
 * **Cryptographic Checksums (MD5, SHA-256):** Brittle byte-level hash functions fail if a single sample changes, such as resampling from 44.1 kHz to 16 kHz, lossy re-encoding (WAV $\to$ MP3/FLAC), trimming by 10 milliseconds, or gain alteration.
-* **Deep Neural Embeddings (CLAP, Wav2Vec2, WavLM):** High computational complexity ($O(N^2)$ dot products across partitions), high GPU infrastructure costs, and a high rate of **semantic false positives** (two different individuals saying identical words produce high cosine similarity, falsely flagging valid training samples).
+> **Core Architectural Finding:**  
+> **SplitSafe brings established spectral landmark fingerprinting techniques into an integrated, partition-aware audio ML dataset auditing workflow.** By combining fast, zero-GPU spectral peak extraction with bipartite cross-split alignment, sub-clip coverage metrics, and deterministic speaker boundary checks, it eliminates silent evaluation contamination before expensive model training begins.
 
-**SplitSafe** resolves this fundamental problem via **Deterministic Spectral-Peak Landmark Constellation Hashing** paired with **Coherent Time-Offset Coincidence Voting**. It requires zero GPU compute, downloads no neural weights, runs on standard CPUs at $>95$ files/second, achieves **100% recall** on modified duplicates, and maintains **0% false alarms** on real human speech datasets.
+SplitSafe requires zero GPU compute, downloads no neural weights, runs on standard CPUs at $>95$ files/second, achieves **100% recall** on modified duplicates, and maintains **0% false alarms** on real human speech datasets.
 
 ---
 

@@ -43,6 +43,9 @@ Traditional data engineering tools are fundamentally blind to audio dataset cont
 
 ## 2. The SplitSafe Solution
 
+> **Core Architectural Finding:**  
+> **SplitSafe brings established spectral landmark fingerprinting techniques into an integrated, partition-aware audio ML dataset auditing workflow.**
+
 **SplitSafe** is an open-source, local-first auditing tool specifically engineered to guarantee dataset integrity across machine learning partitions (`train/`, `val/`, `test/`).
 
 ### 2.1 Core Pillars
