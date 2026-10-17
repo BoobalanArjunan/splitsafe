@@ -106,5 +106,6 @@ SplitSafe forms **Tier 2** of the unified Audio Curation Suite for international
 - [x] Full unit test suite implemented (`tests/test_splits.py`) with 21/21 passing tests.
 - [x] WaveWash reference checkpoint documented and archived.
 - [x] Real-data benchmark validation on LibriSpeech (`dev-clean` vs `test-clean`): **0 false alarms, 100% planted leak detection (56/56)**. See [REAL_DATA_VALIDATION_REPORT.md](file:///Users/mymac/Desktop/Ai%202026%20Work/Antigravity%20Works/Splitsafe/project_plan/REAL_DATA_VALIDATION_REPORT.md).
-- [ ] PyPI Build & Alpha Publication (`splitsafe v0.1.0a1`).
-- [ ] Community and developer documentation expansion.
+- [ ] **Next Step (Tomorrow):** PyPI Upload (`twine upload --repository testpypi dist/*` -> `twine upload dist/*`) and Git release tag (`v0.1.0a1`).
+- [ ] **Next Project:** SplitSafe Studio (Enterprise Web/Desktop UI with Wavesurfer.js leak playback, PDF compliance certificate, and Stripe billing).
+- [ ] Community & developer documentation expansion.
