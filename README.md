@@ -2,7 +2,8 @@
 
 [![tests](https://github.com/BoobalanArjunan/splitsafe/actions/workflows/tests.yml/badge.svg)](https://github.com/BoobalanArjunan/splitsafe/actions/workflows/tests.yml)
 [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/boobalanit/splitsafe)
-![status: alpha](https://img.shields.io/badge/status-alpha-orange)
+![version](https://img.shields.io/badge/version-0.1.0-blue)
+![status: stable](https://img.shields.io/badge/status-stable-green)
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 
 **Check your audio train / validation / test folders for leakage before you train.**
@@ -17,10 +18,10 @@ It is small, runs on your own computer, never changes your files, and uses class
 ## Install
 
 ```
-pip install --pre splitsafe
+pip install splitsafe
 ```
 
-(`--pre` is needed because this is an alpha release. Python 3.10 or newer.)
+(Python 3.10 or newer.)
 
 ## Use
 
