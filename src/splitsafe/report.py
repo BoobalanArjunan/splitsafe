@@ -320,11 +320,11 @@ def to_html(res: Result, out_path: Path | None = None, strict_speakers: bool = F
 
 def write_reports(res: Result, out: Path, strict_speakers=False):
     out.mkdir(parents=True, exist_ok=True)
-    (out / "splitsafe_report.json").write_text(json.dumps(to_dict(res, strict_speakers), indent=2))
-    with open(out / "cross_split_duplicates.csv", "w", newline="") as f:
+    (out / "splitsafe_report.json").write_text(json.dumps(to_dict(res, strict_speakers), indent=2), encoding="utf-8")
+    with open(out / "cross_split_duplicates.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["file_a", "split_a", "file_b", "split_b", "kind", "aligned_matches", "overlap"])
         for m in res.matches:
             w.writerow([m.a, m.split_a, m.b, m.split_b, m.kind, m.votes, m.coverage])
-    (out / "splitsafe_report.txt").write_text(to_text(res, strict_speakers, limit=10**9))
+    (out / "splitsafe_report.txt").write_text(to_text(res, strict_speakers, limit=10**9), encoding="utf-8")
     to_html(res, out / "splitsafe_report.html", strict_speakers)

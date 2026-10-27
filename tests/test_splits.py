@@ -185,19 +185,19 @@ def test_cli_exit_codes_and_reports(two, tmp_path, capsys):
     write(te / "dup.wav", x)
     out = tmp_path / "rep"
     assert main(["check", str(tr), str(te), "--out", str(out)]) == 1
-    data = json.loads((out / "splitsafe_report.json").read_text())
+    data = json.loads((out / "splitsafe_report.json").read_text(encoding="utf-8"))
     assert data["verdict"] == "FAIL" and len(data["cross_split_duplicates"]) == 1
-    rows = list(csv.reader(open(out / "cross_split_duplicates.csv")))
+    rows = list(csv.reader(open(out / "cross_split_duplicates.csv", encoding="utf-8")))
     assert len(rows) == 2 and rows[0][0] == "file_a"
     assert (out / "splitsafe_report.html").exists()
-    html_out = (out / "splitsafe_report.html").read_text()
+    html_out = (out / "splitsafe_report.html").read_text(encoding="utf-8")
     assert "<audio" in html_out
     assert "Play Both Aligned" in html_out
 
     custom_html = tmp_path / "custom_report.html"
     assert main(["check", str(tr), str(te), "--html", str(custom_html)]) == 1
     assert custom_html.exists()
-    assert "<audio" in custom_html.read_text()
+    assert "<audio" in custom_html.read_text(encoding="utf-8")
 
     capsys.readouterr()
     assert main(["check", str(tr), str(te), "--json"]) == 1
