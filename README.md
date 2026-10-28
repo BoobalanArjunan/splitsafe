@@ -1,12 +1,15 @@
 # splitsafe
 
 [![tests](https://github.com/BoobalanArjunan/splitsafe/actions/workflows/tests.yml/badge.svg)](https://github.com/BoobalanArjunan/splitsafe/actions/workflows/tests.yml)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BoobalanArjunan/wavewash/blob/main/notebooks/quickstart.ipynb)
 [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-yellow)](https://huggingface.co/spaces/boobalanit/splitsafe)
 ![version](https://img.shields.io/badge/version-0.1.0-blue)
 ![status: stable](https://img.shields.io/badge/status-stable-green)
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 
 **Check your audio train / validation / test folders for leakage before you train.**
+
+> 🚀 **Interactive 1-Click Demo:** Run the **[Interactive Google Colab Quickstart](https://colab.research.google.com/github/BoobalanArjunan/wavewash/blob/main/notebooks/quickstart.ipynb)** to test SplitSafe's data leakage detection live in your browser.
 
 > **Core Architectural Finding:**  
 > SplitSafe brings established spectral landmark fingerprinting techniques into an integrated, partition-aware audio ML dataset auditing workflow—guaranteeing zero evaluation contamination and speaker boundary integrity before model training.
